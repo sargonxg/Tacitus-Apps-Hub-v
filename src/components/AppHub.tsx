@@ -16,7 +16,7 @@ const coreApps: AppDescriptor[] = [
     name: 'Resolution Engine',
     tag: 'Conflict Intelligence',
     description:
-      'Email-native analysis for boards, teams, and institutions. Turn narrative asymmetry into structured evidence and common ground.',
+      '[We're building] Email-native analysis for boards, teams, and institutions. Turn narrative asymmetry into structured evidence and common ground.',
     href: 'https://tacitus.me/resolution-engine', // TODO: update to your real URL
     accentClass: 'app-card--resolution'
   },
@@ -26,7 +26,7 @@ const coreApps: AppDescriptor[] = [
     tag: 'Polarization & Campaigns',
     description:
       'Dynamic explorer of polarization cases, audiences, and narratives. Map moral frames, backlash risk, and paths to cross-tribal agreement.',
-    href: 'https://tacitus.me/polarization', // TODO: update
+    href: 'https://tacitusme-prism-lab-build-11-23-2025-724361567200.us-west1.run.app/', // TODO: update
     accentClass: 'app-card--prism'
   },
   {
@@ -35,7 +35,7 @@ const coreApps: AppDescriptor[] = [
     tag: 'Graph-Native Ontology',
     description:
       'Interactive conflict graph and ontology engine. Trace influence, constraints, veto players, and bridge actors across complex systems.',
-    href: 'https://tacitus.me/conflict-graph', // TODO: update
+    href: 'https://conflict-graph-engine-724361567200.us-west1.run.app/', // TODO: update
     accentClass: 'app-card--graph'
   }
 ]
