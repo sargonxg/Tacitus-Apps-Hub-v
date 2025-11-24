@@ -506,3 +506,77 @@ body {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+/* Base card styling */
+.app-card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.22s ease;
+}
+
+/* Gradient overlay driven by CSS variables */
+.app-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--card-gradient, radial-gradient(circle at top left, #1f2933, #020617));
+  opacity: 0.9;              /* gradient is ON by default */
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+/* Stronger gradient + subtle lift on hover */
+.app-card:hover::before {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.app-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+  filter: saturate(1.15);
+}
+
+/* Accent gradients per product */
+.app-card--resolution {
+  --card-gradient: linear-gradient(135deg, #22d3ee 0%, #4f46e5 40%, #0b1020 100%);
+}
+
+.app-card--prism {
+  --card-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 40%, #0b1020 100%);
+}
+
+.app-card--graph {
+  --card-gradient: linear-gradient(135deg, #f97316 0%, #22c55e 40%, #020617 100%);
+}
+
+.app-card--tribevibes {
+  --card-gradient: linear-gradient(135deg, #22c0ff 0%, #fb7185 40%, #020617 100%);
+}
+
+.app-card--concordia {
+  --card-gradient: linear-gradient(135deg, #f97316 0%, #facc15 40%, #111827 100%);
+}
+
+/* Optional: ecosystem layout tweak so Concordia sits nicely under the main grid */
+.hub-ecosystem {
+  margin-top: 2.5rem;
+}
+
+.hub-section-title {
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 0.75rem;
+}
+
+.hub-grid--ecosystem {
+  grid-template-columns: minmax(0, 1fr);
+}
+
