@@ -39,10 +39,7 @@ export const Auth: React.FC = () => {
         </div>
         <h1 className="auth-title">Apps Hub Access</h1>
         <p className="auth-subtitle">
-          One sign-in unlocks the <strong>Resolution Engine</strong>,{' '}
-          <strong>Prism Lab</strong>,{' '}
-          <strong>Ontology / Conflict Graph</strong>, and{' '}
-          <strong>Concordia Discors Magazine</strong> window.
+          One sign-in unlocks all <strong>TACITUS◳</strong> resources.
         </p>
 
         <form onSubmit={handleSubmit} className="auth-form">
