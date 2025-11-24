@@ -12,12 +12,12 @@ type AppDescriptor = {
 // Core Tacitus apps – to add a new one, just append to this array.
 const coreApps: AppDescriptor[] = [
   {
-    id: 'resolution',
-    name: 'Resolution Engine',
-    tag: 'Conflict Intelligence',
+    id: 'concordia-engine',
+    name: 'Concordia Engine',
+    tag: 'Resolution Engine',
     description:
-      '[We're building] Email-native analysis for boards, teams, and institutions. Turn narrative asymmetry into structured evidence and common ground.',
-    href: 'https://tacitus.me/resolution-engine', // TODO: update to your real URL
+      "[In development] Core conflict-intelligence engine for boards, teams, and institutions. Quantifies the resolution deficit, surfaces leverage points, and plots a structured path to common ground.",
+    href: 'https://tacitus.me/resolution-engine', // placeholder route for now
     accentClass: 'app-card--resolution'
   },
   {
@@ -26,17 +26,26 @@ const coreApps: AppDescriptor[] = [
     tag: 'Polarization & Campaigns',
     description:
       'Dynamic explorer of polarization cases, audiences, and narratives. Map moral frames, backlash risk, and paths to cross-tribal agreement.',
-    href: 'https://tacitusme-prism-lab-build-11-23-2025-724361567200.us-west1.run.app/', // TODO: update
+    href: 'https://tacitusme-prism-lab-build-11-23-2025-724361567200.us-west1.run.app/',
     accentClass: 'app-card--prism'
   },
   {
     id: 'graph',
-    name: 'Ontology / Conflict Graph',
+    name: 'Ontology & Conflict Graph',
     tag: 'Graph-Native Ontology',
     description:
       'Interactive conflict graph and ontology engine. Trace influence, constraints, veto players, and bridge actors across complex systems.',
-    href: 'https://conflict-graph-engine-724361567200.us-west1.run.app/', // TODO: update
+    href: 'https://conflict-graph-engine-724361567200.us-west1.run.app/',
     accentClass: 'app-card--graph'
+  },
+  {
+    id: 'tribevibes',
+    name: 'TribeVibes',
+    tag: 'Epistemic Tribes Simulator',
+    description:
+      'Stress-test policy drafts, messages, and narratives against 27 clustered political–epistemic tribes. Anticipate resonance, backlash, and coalition paths before you go live.',
+    href: 'https://tacitus.me/tribevibes', // TODO: update to real URL when ready
+    accentClass: 'app-card--tribevibes'
   }
 ]
 
@@ -58,8 +67,6 @@ type AppHubProps = {
 }
 
 export const AppHub: React.FC<AppHubProps> = ({ onSignOut }) => {
-  const allApps = [...coreApps, ...ecosystemApps]
-
   return (
     <div className="app-root">
       <div className="background-orbit background-orbit--hub"></div>
@@ -70,7 +77,7 @@ export const AppHub: React.FC<AppHubProps> = ({ onSignOut }) => {
           <span className="logo-cursor">_</span>
         </div>
         <div className="hub-header-right">
-          <span className="hub-badge">Apps Hub</span>
+          <span className="hub-badge">APPS HUB</span>
           <button className="signout-button" onClick={onSignOut}>
             Sign out
           </button>
@@ -79,23 +86,30 @@ export const AppHub: React.FC<AppHubProps> = ({ onSignOut }) => {
 
       <main className="hub-main">
         <section className="hub-hero glass-panel">
-          <h1 className="hub-title">Conflict Intelligence, One Door.</h1>
+          <h1 className="hub-title">TACITUS◳ Apps Hub</h1>
           <p className="hub-subtitle">
-            Auth once with Supabase, then move seamlessly between the{' '}
-            <strong>Resolution Engine</strong>,{' '}
-            <strong>Prism Lab Polarization</strong>,{' '}
-            <strong>Ontology / Conflict Graph</strong>, and our sister project{' '}
-            <strong>Concordia Discors Magazine</strong>.
+            Your portal into our conflict intelligence and resolution
+            technologies. We are actively building and testing new tools — this
+            is where they ship first. For thoughts or early-access feedback,
+            reach us at{' '}
+            <a
+              href="mailto:hello@tacitus.me"
+              className="hub-link"
+            >
+              hello@tacitus.me
+            </a>
+            .
           </p>
           <div className="hub-meta">
-            <span className="hub-pill">Email-native</span>
-            <span className="hub-pill">Multi-agent</span>
-            <span className="hub-pill">Graph-aware</span>
+            <span className="hub-pill">Conflict intelligence</span>
+            <span className="hub-pill">Resolution technologies</span>
+            <span className="hub-pill">Experimental builds</span>
           </div>
         </section>
 
+        {/* Core products grid */}
         <section className="hub-grid">
-          {allApps.map(app => (
+          {coreApps.map(app => (
             <a
               key={app.id}
               href={app.href}
@@ -116,6 +130,32 @@ export const AppHub: React.FC<AppHubProps> = ({ onSignOut }) => {
           ))}
         </section>
 
+        {/* Ecosystem / magazine below the four main products */}
+        <section className="hub-ecosystem">
+          <h3 className="hub-section-title">Ecosystem</h3>
+          <div className="hub-grid hub-grid--ecosystem">
+            {ecosystemApps.map(app => (
+              <a
+                key={app.id}
+                href={app.href}
+                className={`app-card glass-panel ${app.accentClass}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="app-card-header">
+                  <span className="app-tag">{app.tag}</span>
+                </div>
+                <h2 className="app-name">{app.name}</h2>
+                <p className="app-description">{app.description}</p>
+                <div className="app-footer">
+                  <span className="app-link-label">Open</span>
+                  <span className="app-link-arrow">↗</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
         <footer className="hub-footer">
           <span>TACITUS◳ — clarity in conflict.</span>
           <span className="hub-footer-dot">•</span>
@@ -128,3 +168,4 @@ export const AppHub: React.FC<AppHubProps> = ({ onSignOut }) => {
     </div>
   )
 }
+
