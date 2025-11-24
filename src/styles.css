@@ -319,6 +319,16 @@ body {
   color: var(--text-muted);
 }
 
+.hub-link {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(34, 211, 238, 0.5);
+}
+
+.hub-link:hover {
+  border-bottom-style: solid;
+}
+
 .hub-meta {
   display: flex;
   flex-wrap: wrap;
@@ -341,6 +351,8 @@ body {
   gap: 1rem;
 }
 
+/* App cards – subtle shared gradient, accents via border + glow */
+
 .app-card {
   position: relative;
   padding: 1.15rem 1.1rem 1.05rem;
@@ -348,40 +360,46 @@ body {
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  border: 1px solid rgba(148, 163, 184, 0.6);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
   transition:
-    transform 0.16s ease,
-    box-shadow 0.16s ease,
-    border-color 0.16s ease,
-    background 0.16s ease;
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    filter 0.22s ease;
 }
 
+/* Very soft, shared gradient from top-left for ALL boxes */
 .app-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0;
-  transition: opacity 0.16s ease;
+  pointer-events: none;
   background: radial-gradient(
     circle at top left,
-    rgba(34, 211, 238, 0.16),
-    transparent 55%
+    rgba(148, 163, 184, 0.3) 0%,
+    rgba(15, 23, 42, 0.8) 40%,
+    rgba(2, 6, 23, 0) 75%
   );
+  opacity: 0.7;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+/* Slightly stronger, but still subtle, on hover */
+.app-card:hover::before {
+  opacity: 0.9;
+  transform: scale(1.04);
 }
 
 .app-card:hover {
   transform: translateY(-3px) translateZ(0);
   box-shadow: 0 18px 36px rgba(15, 23, 42, 0.9);
-  background: linear-gradient(
-      135deg,
-      rgba(15, 23, 42, 0.95),
-      rgba(15, 23, 42, 0.82)
-    );
+  filter: saturate(1.08);
 }
 
-.app-card:hover::before {
-  opacity: 1;
-}
+/* Card content */
 
 .app-card-header {
   display: flex;
@@ -421,58 +439,79 @@ body {
   font-size: 0.95rem;
 }
 
-/* Accent borders / glows */
+/* Accent borders / glows – kept subtle, no heavy fills */
 
 .app-card--resolution {
-  border-color: rgba(34, 211, 238, 0.8);
-  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.3);
+  border-color: rgba(34, 211, 238, 0.75);
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.25);
 }
 
-.app-card--resolution::before {
-  background: radial-gradient(
-    circle at top left,
-    rgba(34, 211, 238, 0.25),
-    transparent 60%
-  );
+.app-card--resolution:hover {
+  box-shadow:
+    0 0 0 1px rgba(34, 211, 238, 0.3),
+    0 18px 45px rgba(34, 211, 238, 0.2);
 }
 
 .app-card--prism {
-  border-color: rgba(244, 114, 182, 0.9);
-  box-shadow: 0 0 0 1px rgba(244, 114, 182, 0.35);
+  border-color: rgba(244, 114, 182, 0.85);
+  box-shadow: 0 0 0 1px rgba(244, 114, 182, 0.3);
 }
 
-.app-card--prism::before {
-  background: radial-gradient(
-    circle at top left,
-    rgba(244, 114, 182, 0.28),
-    transparent 60%
-  );
+.app-card--prism:hover {
+  box-shadow:
+    0 0 0 1px rgba(244, 114, 182, 0.32),
+    0 18px 45px rgba(244, 114, 182, 0.22);
 }
 
 .app-card--graph {
-  border-color: rgba(251, 191, 36, 0.9);
-  box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.38);
+  border-color: rgba(251, 191, 36, 0.85);
+  box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.32);
 }
 
-.app-card--graph::before {
-  background: radial-gradient(
-    circle at top left,
-    rgba(251, 191, 36, 0.28),
-    transparent 60%
-  );
+.app-card--graph:hover {
+  box-shadow:
+    0 0 0 1px rgba(251, 191, 36, 0.34),
+    0 18px 45px rgba(251, 191, 36, 0.22);
+}
+
+.app-card--tribevibes {
+  border-color: rgba(94, 234, 212, 0.85);
+  box-shadow: 0 0 0 1px rgba(94, 234, 212, 0.32);
+}
+
+.app-card--tribevibes:hover {
+  box-shadow:
+    0 0 0 1px rgba(94, 234, 212, 0.34),
+    0 18px 45px rgba(94, 234, 212, 0.22);
 }
 
 .app-card--concordia {
-  border-color: rgba(168, 85, 247, 0.9);
-  box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.38);
+  border-color: rgba(250, 204, 21, 0.85);
+  box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.32);
 }
 
-.app-card--concordia::before {
-  background: radial-gradient(
-    circle at top left,
-    rgba(168, 85, 247, 0.28),
-    transparent 60%
-  );
+.app-card--concordia:hover {
+  box-shadow:
+    0 0 0 1px rgba(250, 204, 21, 0.34),
+    0 18px 45px rgba(250, 204, 21, 0.22);
+}
+
+/* Ecosystem section (Concordia Discors below main 4 apps) */
+
+.hub-ecosystem {
+  margin-top: 2.5rem;
+}
+
+.hub-section-title {
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 0.75rem;
+}
+
+.hub-grid--ecosystem {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 /* Footer */
@@ -502,81 +541,8 @@ body {
     padding: 1.5rem 1.4rem;
   }
 
+  /* Four core apps in a row on desktop */
   .hub-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
-
-/* Base card styling */
-.app-card {
-  position: relative;
-  overflow: hidden;
-  transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease,
-    filter 0.22s ease;
-}
-
-/* Gradient overlay driven by CSS variables */
-.app-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--card-gradient, radial-gradient(circle at top left, #1f2933, #020617));
-  opacity: 0.9;              /* gradient is ON by default */
-  transition:
-    opacity 0.22s ease,
-    transform 0.22s ease;
-}
-
-/* Stronger gradient + subtle lift on hover */
-.app-card:hover::before {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-.app-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
-  filter: saturate(1.15);
-}
-
-/* Accent gradients per product */
-.app-card--resolution {
-  --card-gradient: linear-gradient(135deg, #22d3ee 0%, #4f46e5 40%, #0b1020 100%);
-}
-
-.app-card--prism {
-  --card-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 40%, #0b1020 100%);
-}
-
-.app-card--graph {
-  --card-gradient: linear-gradient(135deg, #f97316 0%, #22c55e 40%, #020617 100%);
-}
-
-.app-card--tribevibes {
-  --card-gradient: linear-gradient(135deg, #22c0ff 0%, #fb7185 40%, #020617 100%);
-}
-
-.app-card--concordia {
-  --card-gradient: linear-gradient(135deg, #f97316 0%, #facc15 40%, #111827 100%);
-}
-
-/* Optional: ecosystem layout tweak so Concordia sits nicely under the main grid */
-.hub-ecosystem {
-  margin-top: 2.5rem;
-}
-
-.hub-section-title {
-  font-size: 0.85rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  opacity: 0.8;
-  margin-bottom: 0.75rem;
-}
-
-.hub-grid--ecosystem {
-  grid-template-columns: minmax(0, 1fr);
-}
-
