@@ -26,7 +26,7 @@ const coreApps: AppDescriptor[] = [
     tag: 'Polarization & Campaigns',
     description:
       'Dynamic explorer of polarization cases, audiences, and narratives. Map moral frames, backlash risk, and paths to cross-tribal agreement.',
-    href: 'https://tacitusme-prism-lab-build-11-23-2025-724361567200.us-west1.run.app/',
+    href: 'https://tribevibes-by-tacitus-me-v1-6-724361567200.us-west1.run.app',
     accentClass: 'app-card--prism'
   },
   {
