@@ -16,7 +16,7 @@ const coreApps: AppDescriptor[] = [
     name: 'Concordia Engine',
     tag: 'Resolution Engine',
     description:
-      "[In development] Core conflict-intelligence engine for boards, teams, and institutions. Quantifies the resolution deficit, surfaces leverage points, and plots a structured path to common ground.",
+      "[IN DEVELOPMENT] Core conflict-intelligence engine for boards, teams, and institutions. Quantifies the resolution deficit, surfaces leverage points, and plots a structured path to common ground.",
     href: 'https://tacitus.me/resolution-engine', // placeholder route for now
     accentClass: 'app-card--resolution'
   },
