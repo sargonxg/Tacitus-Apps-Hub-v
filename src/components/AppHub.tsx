@@ -22,7 +22,7 @@ const coreApps: AppDescriptor[] = [
   },
   {
     id: 'prism',
-    name: 'Prism Lab · Polarization',
+    name: 'Prism Lab · Polarization v2.5',
     tag: 'Polarization & Campaigns',
     description:
       'Dynamic explorer of polarization cases, audiences, and narratives. Map moral frames, backlash risk, and paths to cross-tribal agreement.',
@@ -31,19 +31,19 @@ const coreApps: AppDescriptor[] = [
   },
   {
     id: 'graph',
-    name: 'Ontology & Conflict Graph',
+    name: 'Ontology & Conflict Graph v3.2 5',
     tag: 'Graph-Native Ontology',
     description:
       'Interactive conflict graph and ontology engine. Trace influence, constraints, veto players, and bridge actors across complex systems.',
-    href: 'https://conflict-graph-engine-724361567200.us-west1.run.app/',
+    href: 'https://conflict-ontology-graph-engine-v5-tacitus-724361567200.us-west1.run.app',
     accentClass: 'app-card--graph'
   },
   {
     id: 'tribevibes',
-    name: 'TribeVibes Sentinel',
+    name: '27TribeVibes | Sentinel v1.2',
     tag: 'Epistemic Tribes Simulator',
     description:
-      'Stress-test policy drafts, messages, and narratives against 27 clustered political–epistemic tribes. Anticipate resonance, backlash, and coalition paths before you go live.',
+      'Stress-test policies, products and narratives against 27 clustered political–epistemic tribes by ◳. Anticipate resonance, backlash, and coalition paths before you go live.',
     href: 'https://tribevibes-by-tacitus-me-v1-6-724361567200.us-west1.run.app', // TODO: update to real URL when ready
     accentClass: 'app-card--tribevibes'
   }
