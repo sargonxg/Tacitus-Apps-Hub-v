@@ -41,7 +41,7 @@ const coreApps: AppDescriptor[] = [
   {
     id: 'tribevibes',
     name: '27TribeVibes | Sentinel v1.2',
-    tag: 'Epistemic Tribes Simulator',
+    tag: 'Epistemic Tribes Research',
     description:
       'Stress-test policies, products and narratives against 27 clustered political–epistemic tribes by ◳. Anticipate resonance, backlash, and coalition paths before you go live.',
     href: 'https://tribevibes-by-tacitus-me-v1-6-724361567200.us-west1.run.app', // TODO: update to real URL when ready
