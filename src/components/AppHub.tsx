@@ -163,8 +163,14 @@ export const AppHub: React.FC<AppHubProps> = ({ onSignOut }) => {
             Concordia Discors Magazine — exploring polarization, liberty, and
             conscience.
           </span>
-        </footer>
-      </main>
+  </span>
+  <span className="hub-footer-dot">•</span>
+  <span className="hub-privacy">
+    Your authentication email is stored securely in Supabase and used only to 
+    manage your access to Tacitus◳. You may request deletion or export of your data 
+    at <a href="mailto:hello@tacitus.me">hello@tacitus.me</a>.
+  </span>
+</footer>      </main>
     </div>
   )
 }
