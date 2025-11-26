@@ -9,7 +9,7 @@ type AppDescriptor = {
   accentClass: string
 }
 
-// Core Tacitus apps – to add a new one, just append to this array.
+// Core Tacitus apps
 const coreApps: AppDescriptor[] = [
   {
     id: 'concordia-engine',
@@ -17,7 +17,7 @@ const coreApps: AppDescriptor[] = [
     tag: 'Resolution Engine',
     description:
       "[IN DEVELOPMENT] Core conflict-intelligence engine for boards, teams, and institutions. Quantifies the resolution deficit, surfaces leverage points, and plots a structured path to common ground.",
-    href: 'https://tacitus.me/resolution-engine', // placeholder route for now
+    href: 'https://tacitus.me/resolution-engine',
     accentClass: 'app-card--resolution'
   },
   {
@@ -44,12 +44,12 @@ const coreApps: AppDescriptor[] = [
     tag: 'Epistemic Tribes Research',
     description:
       'Stress-test policies, products and narratives against 27 clustered political–epistemic tribes by ◳. Anticipate resonance, backlash, and coalition paths before you go live.',
-    href: 'https://tribevibes-by-tacitus-me-v1-6-724361567200.us-west1.run.app', // TODO: update to real URL when ready
+    href: 'https://tribevibes-by-tacitus-me-v1-6-724361567200.us-west1.run.app',
     accentClass: 'app-card--tribevibes'
   }
 ]
 
-// Ecosystem / external apps – Concordia Discors, future labs, etc.
+// Ecosystem apps
 const ecosystemApps: AppDescriptor[] = [
   {
     id: 'concordia',
@@ -88,18 +88,15 @@ export const AppHub: React.FC<AppHubProps> = ({ onSignOut }) => {
         <section className="hub-hero glass-panel">
           <h1 className="hub-title">TACITUS◳ Apps Hub</h1>
           <p className="hub-subtitle">
-            Your portal into our conflict intelligence and resolution
-            technologies. We are actively building and testing new tools — this
-            is where they ship first. For thoughts or early-access feedback,
-            reach us at{' '}
-            <a
-              href="mailto:hello@tacitus.me"
-              className="hub-link"
-            >
+            Your portal into our conflict intelligence and resolution technologies.
+            We are actively building and testing new tools — this is where they ship first.
+            For thoughts or early-access feedback, reach us at{' '}
+            <a href="mailto:hello@tacitus.me" className="hub-link">
               hello@tacitus.me
             </a>
             .
           </p>
+
           <div className="hub-meta">
             <span className="hub-pill">Conflict intelligence</span>
             <span className="hub-pill">Resolution technologies</span>
@@ -130,7 +127,7 @@ export const AppHub: React.FC<AppHubProps> = ({ onSignOut }) => {
           ))}
         </section>
 
-        {/* Ecosystem / magazine below the four main products */}
+        {/* Ecosystem */}
         <section className="hub-ecosystem">
           <h3 className="hub-section-title">Ecosystem</h3>
           <div className="hub-grid hub-grid--ecosystem">
@@ -156,14 +153,7 @@ export const AppHub: React.FC<AppHubProps> = ({ onSignOut }) => {
           </div>
         </section>
 
-        <footer className="hub-footer">
-          <span>TACITUS◳ — clarity in conflict.</span>
-          <span className="hub-footer-dot">•</span>
-          <span>
-            Concordia Discors Magazine — exploring polarization, liberty, and
-            conscience.
-          </span>
-  {/* FOOTER */}
+        {/* Correct FOOTER */}
         <footer className="hub-footer">
           <span>TACITUS◳ — clarity in conflict.</span>
           <span className="hub-footer-dot">•</span>
@@ -181,3 +171,4 @@ export const AppHub: React.FC<AppHubProps> = ({ onSignOut }) => {
     </div>
   )
 }
+
