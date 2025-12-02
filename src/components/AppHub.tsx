@@ -31,11 +31,11 @@ const coreApps: AppDescriptor[] = [
   },
   {
     id: 'graph',
-    name: 'Ontology & Conflict Graph v3.2 5',
+    name: 'Ontology & Conflict Graph v3.5 5',
     tag: 'Graph-Native Ontology',
     description:
       'Interactive conflict graph and ontology engine. Trace influence, constraints, veto players, and bridge actors across complex systems.',
-    href: 'https://conflict-ontology-graph-engine-v5-tacitus-724361567200.us-west1.run.app',
+    href: 'https://copy-of-conflict-ontology-graph-engine-v6-api-key-724361567200.us-west1.run.app/',
     accentClass: 'app-card--graph'
   },
   {
